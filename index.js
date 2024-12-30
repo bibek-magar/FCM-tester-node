@@ -19,8 +19,8 @@ async function getAccessToken() {
 
     const client = await auth.getClient();
     const accessToken = await client.getAccessToken();
-    console.log("Access Token:", accessToken.token); // Log the token string
-    return accessToken.token; // Return the token string
+    console.log("Access Token:", accessToken.token);
+    return accessToken.token;
 }
 
 /**
@@ -47,7 +47,7 @@ async function sendNotification() {
         const response = await fetch(url, {
             method: "POST",
             headers: {
-                "Authorization": `Bearer ${accessToken}`, // Pass the correct token
+                "Authorization": `Bearer ${accessToken}`,
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(payload),
