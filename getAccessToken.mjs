@@ -2,8 +2,8 @@ import { GoogleAuth } from "google-auth-library";
 import fetch from "node-fetch"; // Use ES module syntax for node-fetch
 
 const SERVICE_ACCOUNT_FILE = "./serviceAccount.json"; // Path to your service account JSON file
-const PROJECT_ID = "nnn-dev"; // Replace with your Firebase Project ID
-const DEVICE_FCM_TOKEN = "eJwBeEHaQl6dBYW54bwoU_:APA91bF4WZmiKslaxU_MNQfamaXKf2FOnbH5ErZGYs76ayEiS3vNtFkBKvcCzkx-sQOYZjkVwPK9UEO_vcBhShnsXU6S40yEVYSZrn62DroKxOWugycZVL8";
+const PROJECT_ID = ""; // Replace with your Firebase Project ID
+const DEVICE_FCM_TOKEN = "";
 // const DEVICE_FCM_TOKEN = "f0mF5t-eSoKqNXWigpEd7v:APA91bGnejUK2YJVFG_uMgxtQ53zmBIdpqeNr3e_yMp4N7721lk0XFnSabsFGGZSFsu-K5X1SCose2zXjT7Co9LadSlRnvnlUcdK9ciHvI1CwbT8784RYD0"; // Replace with the target device's FCM token
 
 /**
