@@ -7,7 +7,6 @@ npm-debug.log*
 
 # Firebase service account
 serviceAccount.json
-serviceAccountExample.json
 
 # Logs
 logs
