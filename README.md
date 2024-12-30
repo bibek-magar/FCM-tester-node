@@ -1,6 +1,6 @@
 # Firebase FCM Notification Sender
 
-This project demonstrates how to send Firebase Cloud Messaging (FCM) notifications using Node.js and the Firebase HTTP v1 API. The implementation utilizes a service account for authentication and Google APIs for generating access tokens.
+This project demonstrates how to send Firebase Cloud Messaging (FCM) notifications using Node.js and the Firebase HTTP v1 API. The implementation utilizes a service account for authentication and Google APIs for generating access tokens. The application securely manages configuration using environment variables.
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ Before using this code, ensure you have the following:
    - Navigate to **Project Settings > Service Accounts**.
    - Click "Generate new private key" to download the service account JSON file.
 4. **Dependencies**:
-   - Install the required Node.js packages: `google-auth-library` and `node-fetch`.
+   - Install the required Node.js packages: `google-auth-library`, `node-fetch`, and `dotenv`.
 
 ## Installation
 
@@ -21,21 +21,18 @@ Before using this code, ensure you have the following:
 2. Install the required dependencies:
 
    ```bash
-   npm install google-auth-library node-fetch
+   npm install google-auth-library node-fetch dotenv
    ```
 
-3. Place the service account JSON file in the project directory and update the path in the code:
+3. Create a `.env` file in the root directory of your project and populate it with the necessary variables:
 
-   ```javascript
-   const SERVICE_ACCOUNT_FILE = "./serviceAccount.json"; // Path to your service account JSON file
+   ```plaintext
+   SERVICE_ACCOUNT_FILE=./serviceAccount.json
+   PROJECT_ID=your-firebase-project-id
+   DEVICE_FCM_TOKEN=your-device-fcm-token
    ```
 
-4. Update the following variables in the script:
-
-   ```javascript
-   const PROJECT_ID = "<your-firebase-project-id>"; // Replace with your Firebase Project ID
-   const DEVICE_FCM_TOKEN = "<device-fcm-token>"; // Replace with the target device's FCM token
-   ```
+4. Place the service account JSON file in the project directory and ensure the path matches the value in the `.env` file.
 
 ## Usage
 
@@ -52,6 +49,10 @@ Before using this code, ensure you have the following:
    - On error: The script logs error details.
 
 ## Code Overview
+
+### Environment Variables
+
+The application uses the `dotenv` package to securely manage sensitive data such as the Firebase project ID, service account path, and device FCM token. These variables are loaded from a `.env` file.
 
 ### Getting an OAuth2 Access Token
 
