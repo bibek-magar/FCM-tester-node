@@ -1,6 +1,7 @@
 # Firebase FCM Notification Sender
 
-This project demonstrates how to send Firebase Cloud Messaging (FCM) notifications using Node.js and the Firebase HTTP v1 API. The implementation utilizes a service account for authentication and Google APIs for generating access tokens. The application securely manages configuration using environment variables.
+This project demonstrates  to send Firebase Cloud Messaging (FCM) notifications using Node.js and the Firebase HTTP v1 API. The implementation utilizes a service account for authentication and Google APIs for generating access tokens. The application securely manages configuration using environment variables. This is used to add additional data which is not provided in firebase console.
+
 
 ## Prerequisites
 
