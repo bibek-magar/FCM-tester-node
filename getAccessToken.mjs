@@ -1,10 +1,13 @@
 import { GoogleAuth } from "google-auth-library";
 import fetch from "node-fetch"; // Use ES module syntax for node-fetch
+import dotenv from "dotenv";
 
-const SERVICE_ACCOUNT_FILE = "./serviceAccount.json"; // Path to your service account JSON file
-const PROJECT_ID = ""; // Replace with your Firebase Project ID
-const DEVICE_FCM_TOKEN = "";
-// const DEVICE_FCM_TOKEN = "f0mF5t-eSoKqNXWigpEd7v:APA91bGnejUK2YJVFG_uMgxtQ53zmBIdpqeNr3e_yMp4N7721lk0XFnSabsFGGZSFsu-K5X1SCose2zXjT7Co9LadSlRnvnlUcdK9ciHvI1CwbT8784RYD0"; // Replace with the target device's FCM token
+// Load environment variables from .env file
+dotenv.config();
+
+const SERVICE_ACCOUNT_FILE = process.env.SERVICE_ACCOUNT_FILE || "./serviceAccount.json"; // Path to your service account JSON file
+const PROJECT_ID = process.env.PROJECT_ID || ""; // Replace with your Firebase Project ID
+const DEVICE_FCM_TOKEN = process.env.DEVICE_FCM_TOKEN || ""; // Replace with the target device's FCM token
 
 /**
  * Get OAuth2 Access Token
